@@ -6,4 +6,4 @@ class Figure(models.Model):
     company = models.CharField(max_length=100)
     release = models.CharField(max_length=100)
     price = models.IntegerField()
-    decription = models.TextField(max_length=250)
+    description = models.TextField(max_length=250)
