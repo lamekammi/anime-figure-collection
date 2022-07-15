@@ -9,4 +9,5 @@ urlpatterns = [
     path('cats/create/', views.FigureCreate.as_view(), name="figures_create"),
     path('cats/<int:pk>/update/', views.FigureUpdate.as_view(), name='figures_update'),
     path('cats/<int:pk>/delete/', views.FigureDelete.as_view(), name='figures_delete'),
+    path('figures/<int:figure_id>/add_comment/', views.add_comment, name='add_comment'),
 ]
