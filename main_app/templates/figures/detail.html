@@ -8,7 +8,12 @@
          <span class="card-title">{{ figure.name }}</span>
          <p>Comapny: {{ figure.company }}</p>
          <p>Release: {{ figure.release }}</p>
+         <p>Price: {{ figure.price }}</p>
          <p>Description: {{ figure.description }}</p>
+    </div>
+    <div class="'card-action">
+          <a href="{% url 'figures_update' figure.id %}">Edit</a>
+          <a href="{% url 'figures_delete' figure.id %}">Delete</a>
     </div>    
   </div>
 

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView 
 from .models import Figure
 
 # Create your views here.
@@ -20,4 +20,12 @@ def figures_detail(request, figure_id):
 class FigureCreate(CreateView):
     model = Figure
     fields = '__all__'
+
+class FigureUpdate(UpdateView):
+    model = Figure
+    fields = '__all__'
+
+class FigureDelete(DeleteView):
+    model = Figure
+    success_url = '/figures/'
 
