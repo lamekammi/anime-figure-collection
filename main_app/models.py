@@ -9,6 +9,17 @@ RATINGS = (
     (4, 4),
     (5, 5)
 )
+
+class Store(models.Model):
+    name = models.CharField(max_length=100)
+    link = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('stores_detail', kwargs={'pk': self.id})
+        
 # Create your models here.
 class Figure(models.Model):
     name = models.CharField(max_length=100)
@@ -16,6 +27,8 @@ class Figure(models.Model):
     release = models.CharField(max_length=100)
     price = models.IntegerField()
     description = models.TextField(max_length=250)
+
+    stores = models.ManyToManyField(Store)
 
     def __str__(self):
         return self.name
