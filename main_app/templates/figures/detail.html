@@ -29,6 +29,46 @@
           {% endfor %}
      </div>
 </div>
+<hr>
+<div class="card">
+     <div class="card-content">
+          <h3>{{ figure.name }}'s Stores</h3>
+          {% if figure.stores.count %}
+               {% for store in figure.stores.all %}
+                    <div class="card">
+                         <div class="card content">
+                              <span class="card-title">
+                                   {{ store.name }} link: {{ store.link }}
+                              </span>
+                         </div>
+                    </div>
+               {% endfor %}
+          {% else %}
+               <h5> No Stores : (</h5>
+          {% endif %}
+     </div>
+</div>
+<div class="card">
+     <h3>Available Stores</h3>
+         {% if stores.count %}
+               {% for store in stores.all %}
+               <div class="card-content">
+                    <span class="card-title">
+                         {{ store.name }} link: {{ store.link }}
+                    </span>
+               </div>
+               <div class="card-action">
+                    <form action="{% url 'assoc_store' figure.id store.id %}" method="POST">
+                         {% csrf_token %}
+                         <button type="submit" class="btn">Add</button>
+                    </form>
+               </div>
+
+               {% endfor %}
+          {% else %}
+               <h5> {{ figure.name }} Already has all stores.</h5>
+          {% endif %}
+</div>
 <script>
 
 const selectEl = document.getElementById('id_rating');

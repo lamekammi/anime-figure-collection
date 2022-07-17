@@ -55,3 +55,4 @@ class StoreList(ListView):
 class StoreCreate(CreateView):
     model = Store
     fields = '__all__'
+    success_url = '/stores/'

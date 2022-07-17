@@ -12,4 +12,5 @@ urlpatterns = [
     path('figures/<int:figure_id>/add_comment/', views.add_comment, name='add_comment'),
     path('stores/', views.StoreList.as_view(), name='stores_index'),
     path('stores/create/', views.StoreCreate.as_view(), name='stores_create'),
+    path('figures/<int:figure_id>/assoc_store/<int:store_id>/', views.assoc_store, name='assoc_store')
 ]
