@@ -1,1 +1,1 @@
-web:gunicorn afcollection.wsgi
+web: gunicorn afcollection.wsgi
