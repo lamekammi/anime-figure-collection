@@ -27,9 +27,8 @@ class Figure(models.Model):
     release = models.CharField(max_length=100)
     price = models.IntegerField()
     description = models.TextField(max_length=250)
-
     stores = models.ManyToManyField(Store)
-
+    
     def __str__(self):
         return self.name
 
