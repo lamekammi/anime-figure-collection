@@ -133,3 +133,5 @@ USE_L10N = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIR = (os.path.join(BASE_DIR, "main_app/static"))
+STATIC_ROOT = (os.path.join(BASE_DIR, "staticfiles"))
